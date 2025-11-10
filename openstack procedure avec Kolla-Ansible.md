@@ -242,7 +242,7 @@ nova_compute_virt_type: "qemu"
 <pre><code>./share/kolla-ansible/init-runonce
 </code></pre>
 
-<h2>Step 7 : Install Openstack Client CLI and Create Demo Networks, Images, Flavors</h2>
+<h2>Step 7 : Accessing Openstack Dashboard</h2>
 
 <h3>7.1 Use browser and type configured IP for kolla_internal_vip_address to access dashboard:</h3>
 
@@ -283,5 +283,6 @@ nova_compute_virt_type: "qemu"
 
 </body>
 </html>
+
 
 
