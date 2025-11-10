@@ -38,7 +38,7 @@
 
 <li>Modify the file like below. Replace the IP with your actual IP.</li>
 
-<li>enp0s3 : Internal Netword</li>
+<li>enp0s3 : Internal Network</li>
 <li>enp0s8 : External Network</li>
 
 <pre><code>network:
@@ -282,3 +282,4 @@ nova_compute_virt_type: "qemu"
 
 </body>
 </html>
+
