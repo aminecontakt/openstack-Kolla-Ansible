@@ -20,6 +20,7 @@
     <li>-- CPU : 2 (Recommended 4)</li>
     <li>-- RAM : 10GB (Recommended 16 GB)</li>
     <li>-- Disk space : 60 GB (Recommended 100 GB)</li>
+    <li>-- 2 Network interface</li>
     <li><strong>Client SSH</strong> pour faciliter la gestion de la machine virtuelle.</li>
     <li><strong>Une connexion Internet </strong> pour télécharger les images et les dépendances nécessaires.</li>
 </ul>
@@ -282,4 +283,5 @@ nova_compute_virt_type: "qemu"
 
 </body>
 </html>
+
 
