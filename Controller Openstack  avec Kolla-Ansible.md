@@ -28,8 +28,9 @@
 <h2>Step 1 : Configuration Environment</h2>
 
 <h3>1.1 Install Ubuntu and update system</h3>
-<pre><code>sudo su
- apt update && apt -y upgrade</code></pre>
+<pre><code>
+sudo su
+apt update && apt -y upgrade</code></pre>
 
 <h2>Step 2 : Install Dependencies on the VM</h2>
 <h3>2.1 Configure static IP in netplan configuration file located at /etc/netplan/ and deploy the new configuration:</h3>
@@ -295,6 +296,7 @@ nova_compute_virt_type: "qemu"
 
 </body>
 </html>
+
 
 
 
