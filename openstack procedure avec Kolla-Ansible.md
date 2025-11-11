@@ -251,6 +251,18 @@ nova_compute_virt_type: "qemu"
 <pre><code>cat /etc/kolla/clouds.yaml
 </code></pre>
 
+<h2>Step 8 : Generate SSH Key </h2>
+
+<h3>8.1 Generate SSH Key for adding other componant node without Passphrase </h3>
+
+<pre>ssh-keygen -t rsa -b 4096 -f ~/.ssh/key-openstack -C "key openstack" <code>
+</code></pre>
+
+<h3>8.2 Saving Public Key </h3>
+
+<pre> cat  ~/.ssh/key-openstack.pub<code>
+</code></pre>
+
 <h2>Troubleshooting:</h2>
 
 <h2>Installation failed somehow</h2>
@@ -283,6 +295,7 @@ nova_compute_virt_type: "qemu"
 
 </body>
 </html>
+
 
 
 
