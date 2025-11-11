@@ -291,11 +291,12 @@ nova_compute_virt_type: "qemu"
 
 <div class="footer">
     <p>Publié par HAMDI Mohamed Amine</p>
-    <p>Date : 18/05/2025</p>
+    <p>Date : 18/05/2025 , Update : 11/11/2025</p>
 </div>
 
 </body>
 </html>
+
 
 
 
