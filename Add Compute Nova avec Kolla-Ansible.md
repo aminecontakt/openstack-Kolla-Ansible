@@ -38,7 +38,7 @@
 <li>Modify the file like below. Replace the IP with your actual IP.</li>
 
 <li>enp0s3 : Internal Network</li>
-<li>enp0s8 : External Network</li>
+
 
 <pre><code>network:
     version: 2
@@ -46,52 +46,91 @@
     ethernets:
         enp0s3:
             addresses:
-              - 10.30.48.10/22
+              - 10.30.48.11/22
             nameservers:
               addresses: [8.8.8.8]
             routes:
               - to: default
                 via:  10.30.51.254
-        enp0s8:
-            dhcp4: true</code></pre>
+        </code></pre>
 
 <li>Apply new configuration and check IP address.</li>
 
 <pre><code>netplan apply
 ip addr</code></pre>
 
-<h3>2.2 Update and upgrade the repo. Remove unused software packages:</h3>
+<h3>2.2 Add IP hosts</h3>
 
-<pre><code>apt update && sudo apt -y upgrade
-apt autoremove</code></pre>
+<pre><code>nano /etc/hosts
+    10.30.48.10 controller
+    10.30.48.11 compute
+ </code></pre>
 
-<h3>2.3 Add docker repository and Install:</h3>
+<h2>Step 3 : Additional dependencies to be installed on your VM</h2>
 
-<li>Docker requires some additional dependencies to be installed on your system.</li>
+<pre>apt-get install -y python3-dev libffi-dev gcc libssl-dev<code>
+</code></pre>
 
-<pre><code>apt install apt-transport-https ca-certificates curl software-properties-common
+<pre>apt install apt-transport-https ca-certificates curl software-properties-common<code>
+</code></pre>
+
+<pre>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg<code>
+</code></pre>
+
+<pre>sudo apt-get install -y docker.io python3-docker<code>
+</code></pre>
+
+<h2>Step 4 : Copy Public Key and security Level</h2>
+
+<pre><code>echo "votre_clé_publique" >> ~/.ssh/authorized_keys
+</code></pre>
+
+<pre><code>chmod 600 ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+</code></pre>
+
+<h2>Step 5 : SSH Configuration</h2>
+<li>Acces SSH Config </li>
+
+<pre>sudo nano /etc/ssh/sshd_config<code>
+</code></pre>
+
+<pre><code>
+PubkeyAuthentication yes      # Autoriser les clés SSH
+PasswordAuthentication no     # Désactiver le mot de passe (optionnel)
+PermitRootLogin yes           # Autoriser root (ou "prohibit-password" pour plus de sécurité)
 </code></pre>
 
 
-<li>Add Docker’s Official GPG Key</li>
+<h2>Step 6 : Controller Configuration </h2>
 
-<pre><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+<li>SSH Configuration</li>
+
+<pre><code>nano ~/.ssh/config
 </code></pre>
 
-<li>Add Docker’s official APT repository</li>
+<li>Add Compute Informations</li>
 
-<pre><code>echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+<pre><code>
+    Host 10.30.48.11  # compute nova 
+        User root
+        IdentityFile /root/.ssh/key-openstack
 </code></pre>
 
-<li>Update the Package Index Again</li>
+<li>All-in-one Configuration</li>
 
-<pre><code>apt update
+<pre><code>nano all-in-one
 </code></pre>
 
-<li>Install Docker Engine and Docker CLI</li>
+<li>Add Line Below</li>
+<pre><code>
+[compute]
+localhost         ansible_connection=local
+compute           ansible_host=10.30.48.11   ansible_user=root ansible_ssh_private_key_file=/root/.ssh/key-openstack
 
-<pre><code>apt install docker-ce docker-ce-cli containerd.io
 </code></pre>
+
+<h2>Step 7 : Controller Configuration </h2>
 
 <li>Start, enable and check docker</li>
 
