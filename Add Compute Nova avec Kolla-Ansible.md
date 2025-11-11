@@ -62,9 +62,10 @@ ip addr</code></pre>
 <h3>2.2 Add IP hosts</h3>
 
 <pre><code>nano /etc/hosts
-    VIP_internal_Adresse controller
-    10.30.48.10          controller
-    10.30.48.11          compute
+   
+    kolla_internal_vip_address    controller
+    10.30.48.10                   controller
+    10.30.48.11                   compute
  </code></pre>
 
 <h2>Step 3 : Additional dependencies to be installed on your VM</h2>
