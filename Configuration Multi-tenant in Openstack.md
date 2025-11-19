@@ -21,7 +21,7 @@ domain_configurations_from_database = True
 <li>Redémarrer le conteneur Keystone après modification</li>
 
 <pre><code>
-docker restart Keystone
+docker restart keystone
 </code></pre>
 
 <li>Dans /etc/kolla/horizon/_9999-custom-settings.py , activer l’option multi-domaine pour l’interface Horizon</li>
