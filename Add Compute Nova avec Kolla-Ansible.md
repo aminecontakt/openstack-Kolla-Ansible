@@ -132,6 +132,12 @@ compute           ansible_host=10.30.48.11   ansible_user=root ansible_ssh_priva
 
 </code></pre>
 
+<li>Tester connexion SSH avec compute </li>
+<pre><code>
+
+ssh root@10.30.48.11 -i  /root/.ssh/key-openstack         
+
+</code></pre>
 
 <h2>Step 7 : Deploy Kolla Ansible Openstack Compute Nova</h2>
 
