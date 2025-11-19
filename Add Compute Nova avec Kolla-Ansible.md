@@ -106,6 +106,15 @@ PermitRootLogin yes           # Autoriser root (ou "prohibit-password" pour plus
 
 <h2>Step 6 : Controller Configuration </h2>
 
+<h3>Add IP hosts</h3>
+
+<pre><code>nano /etc/hosts
+   
+    kolla_internal_vip_address    controller
+    10.30.48.10                   controller
+    10.30.48.11                   compute
+ </code></pre>
+
 <li>SSH Configuration</li>
 
 <pre><code>nano ~/.ssh/config
