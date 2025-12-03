@@ -10,6 +10,8 @@
 <h1>Ajouter le composant Zun dans le controller</h1>
 
 <h2>Step 1 : Activer Zun sur le all-in-one </h2>
+
+<li>Dans /etc/kolla/globals.yml, ajoute/modifie :</li>
 <pre><code>
 enable_zun: "yes"
 enable_kuryr: "yes"
@@ -28,9 +30,11 @@ chmod 755 /opt/cni /opt/cni/bin
 kolla-ansible reconfigure -i all-in-one 
 </code></pre>
 
+
+
 <div class="footer">
     <p>Publié par HAMDI Mohamed Amine</p>
-    <p>Date : 02/12/2025</p>
+    <p>Date : 03/12/2025</p>
 </div>
 
 </body>
