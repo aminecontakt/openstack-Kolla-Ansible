@@ -90,7 +90,7 @@ enable_cinder_backend_lvm: "yes"
 # enable_cinder_backend_iscsi: "no"   # pour backend externe, pas pour LVM interne
 </code></pre>
 
-<li>Vérifier que dans ton inventory (all-in-one ou autre), le nœud contrôleur qui a /dev/sdb est bien dans le groupe [cinder-volume:children] (ou ajoute-le) </li>
+<li>Vérifier que dans ton inventory (all-in-one ou autre), le nœud contrôleur qui a /dev/sdb est bien dans le groupe [cinder-volume:children] (sinon ajoute-le) </li>
 <pre><code>
 nano all-in-one
 </code></pre>
