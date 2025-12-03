@@ -17,3 +17,21 @@ enable_etcd: "yes"
 docker_configure_for_zun: "yes"
 </code></pre>
 
+<h2>Step 2 : Creer le dossier cni avec les permissions</h2>
+<pre><code>
+mkdir -p /opt/cni/bin
+chmod 755 /opt/cni /opt/cni/bin
+</code></pre>
+
+<h2>Step 3 : Deployer Zun</h2>
+<pre><code>
+kolla-ansible reconfigure -i all-in-one 
+</code></pre>
+
+<div class="footer">
+    <p>Publié par HAMDI Mohamed Amine</p>
+    <p>Date : 02/12/2025</p>
+</div>
+
+</body>
+</html>
