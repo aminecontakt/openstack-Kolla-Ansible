@@ -60,7 +60,7 @@ nano /etc/docker/daemon.json
 
 <pre><code>
 systemctl restart docker
-rebbot
+reboot
 </code></pre>
 
 <h2>Step 3 : Configurer le stockage </h2>
