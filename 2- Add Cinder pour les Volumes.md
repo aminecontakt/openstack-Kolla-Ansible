@@ -78,7 +78,7 @@ vgcreate cinder-volumes /dev/sdb
 <li>Configuration du volume</li>
 
 <pre><code>
-cat /etc/kolla/globals.yml
+nano /etc/kolla/globals.yml
 </code></pre>
 <pre><code>
 enable_cinder: "yes"
