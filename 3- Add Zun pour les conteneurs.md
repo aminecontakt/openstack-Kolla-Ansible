@@ -17,6 +17,7 @@ enable_zun: "yes"
 enable_kuryr: "yes"
 enable_etcd: "yes"
 docker_configure_for_zun: "yes"
+containerd_configure_for_zun: "yes"
 </code></pre>
 
 <h2>Step 2 : Creer le dossier cni avec les permissions</h2>
