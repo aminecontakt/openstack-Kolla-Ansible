@@ -148,7 +148,7 @@ ssh root@10.30.48.11 -i  /root/.ssh/key-openstack
 
 </code></pre>
 
-<h2>Step 7 : Deploy Kolla Ansible Openstack Compute Nova</h2>
+<h2>Step 7 : Deploy Kolla Ansible Openstack Compute Nova depuis le controller </h2>
 
 <h3>7.1 Run bootstrap-servers using all-in-one inventory file:</h3>
 
