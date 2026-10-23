@@ -157,7 +157,7 @@ ssh root@10.30.48.11 -i  /root/.ssh/key-openstack
 
 <h3>7.2 Run prechecks using all-in-one inventory file:</h3>
 
-<pre><code>kolla-ansible  prechecks -i ./all-in-one --limit compute
+<pre><code>kolla-ansible  prechecks -i ./all-in-one --limit compute --use-test-images
 </code></pre>
 
 <h3>7.3 Deploy kolla-ansible openstack:</h3>
