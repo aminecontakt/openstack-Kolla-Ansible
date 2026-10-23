@@ -10,7 +10,9 @@
 <h1>Configuration du Multi-domaine dans Openstack</h1>
 
 <h2>Step 1 : activer les drivers spécifiques au domaine </h2>
-<li>Dans /etc/kolla/keystone/keystone.conf , activer les drivers spécifiques au domaine</li>
+<li>mkdir -p /etc/kolla/config/keystone
+
+nano /etc/kolla/config/keystone/keystone.conf , activer les drivers spécifiques au domaine</li>
 
 <pre><code>
 [identity]
