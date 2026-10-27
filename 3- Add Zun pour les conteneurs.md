@@ -13,6 +13,7 @@
 
 <li>Dans /etc/kolla/globals.yml, ajoute/modifie :</li>
 <pre><code>
+enable_horizon_zun: "yes"
 enable_zun: "yes"
 enable_kuryr: "yes"
 enable_etcd: "yes"
