@@ -56,7 +56,7 @@ openstack project create --domain domain-demo projet-demo
 
 openstack user create --domain domain-demo --password Password123 utilisateur-demo
 
-openstack role add --user utilisateur-demo --project projet-demo admin
+openstack role add --user utilisateur-demo --project projet-demo manager
 
 </code></pre>
 
